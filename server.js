@@ -45,7 +45,7 @@ require("./app/routes/pelicula.routes")(app);
 // require("./app/routes/tutorial.route")(app);
 
 // A partir del Paso 12 y 13 también registrarás aquí:
-// require("./app/routes/auth.route")(app);
+require("./app/routes/auth.route")(app);
 // require("./app/routes/pago.route")(app);
 
 // Set port, listen for requests

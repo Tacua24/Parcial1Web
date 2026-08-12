@@ -1,0 +1,80 @@
+### ─── AUTH ────────────────────────────────────────────────────────────────────
+
+### Registro de usuario
+POST https://parcial1web-rkyv.onrender.com/api/auth/signup
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "email": "admin@mail.com",
+  "password": "123456"
+}
+
+###
+
+### Login (guarda el accessToken para usarlo en las rutas protegidas)
+POST https://parcial1web-rkyv.onrender.com/api/auth/signin
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "123456"
+}
+
+###
+
+### ─── PELICULAS ───────────────────────────────────────────────────────────────
+
+### Crear pelicula (protegida)
+POST https://parcial1web-rkyv.onrender.com/api/peliculas/create/
+Content-Type: application/json
+Authorization: Bearer TOKEN
+
+{
+  "nombre": "Inception",
+  "sinopsis": "Un ladrón que roba secretos a través del sueño",
+  "actores": "Leonardo DiCaprio",
+  "duracion": 148,
+  "tipo": "Ciencia Ficción",
+  "categoria": "Acción",
+  "anioLanzamiento": "2010-07-16"
+}
+
+###
+
+### Obtener todas las peliculas
+GET https://parcial1web-rkyv.onrender.com/api/peliculas/
+
+###
+
+### Obtener pelicula por ID
+GET https://parcial1web-rkyv.onrender.com/api/peliculas/1
+
+###
+
+### Obtener peliculas activas
+GET https://parcial1web-rkyv.onrender.com/api/peliculas/status
+
+###
+
+### Actualizar pelicula (protegida)
+PUT https://parcial1web-rkyv.onrender.com/api/peliculas/update/1
+Content-Type: application/json
+Authorization: Bearer TOKEN
+
+{
+  "nombre": "Inception (2010)",
+  "duracion": 150
+}
+
+###
+
+### Eliminar pelicula por ID (protegida)
+DELETE https://parcial1web-rkyv.onrender.com/api/peliculas/delete/1
+Authorization: Bearer TOKEN
+
+###
+
+### Eliminar todas las peliculas (protegida)
+DELETE https://parcial1web-rkyv.onrender.com/api/peliculas/delete/
+Authorization: Bearer TOKEN
